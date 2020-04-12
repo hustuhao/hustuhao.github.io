@@ -1,11 +1,15 @@
 ---
 layout: default
 ---
-
 <div class="page clearfix" index>
+    <!--搜索栏-->
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="search articles...">
+        <ul id="results-container"></ul>
+    </div>
     <div class="left">
-        <h1>Welcome to HyG's Blog!</h1>
-        <small>这里记录着我的前端学习之路</small>
+        <h1>Welcome to turato's Blog!</h1>
+        <small>冲鸭！</small>
         <hr>
         <ul>
             {% for post in paginator.posts %}
@@ -142,6 +146,7 @@ layout: default
                       <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}" style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
                     {% endfor %}
                 </div>
+
             </div>
 
             <!-- <div class="side">
@@ -158,3 +163,15 @@ layout: default
 </div>
 <!-- <script src="{{ "/js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
 <!-- <script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
+<script src="/js/simple-jekyll-search.min.js " charset="utf-8"></script>
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', // 文章列表模板
+        noResultsText: '没有搜索到文章', // 无搜索数据提示语
+        limit: 20, // 返回最大文章数
+        fuzzy: false // 是否模糊匹配
+    })
+</script>

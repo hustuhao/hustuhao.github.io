@@ -3,6 +3,7 @@ layout:     post
 title:      Get-Started-S615-CN
 subtitle:   Others
 date:       2020-04-11
+categories: 信息安全
 author:     turato
 catalog: true
 tags:
