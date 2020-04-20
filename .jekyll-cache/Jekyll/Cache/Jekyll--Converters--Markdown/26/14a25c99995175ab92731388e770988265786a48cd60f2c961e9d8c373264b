@@ -1,0 +1,115 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#前言" id="markdown-toc-前言"><strong>前言</strong></a></li>
+  <li><a href="#1连接-scalance-s615-到广域网" id="markdown-toc-1连接-scalance-s615-到广域网">1、连接 SCALANCE S615 到广域网</a>    <ul>
+      <li><a href="#11-基本步骤" id="markdown-toc-11-基本步骤">1.1 基本步骤</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>文档翻译</p>
+
+<p><strong>SIMATI C NET ，Industrial Ethernet Security，SCALANCE S615 Getting Started</strong></p>
+
+<p><strong>03/2015      C79000-G8900-C390-01</strong></p>
+
+<h2 id="前言"><strong>前言</strong></h2>
+
+<p><strong>目的</strong></p>
+
+<p>​	用示例展示 SCALANCE S615 的配置操作</p>
+
+<p><strong>示例的 IP 设置</strong></p>
+
+<p>​	注意：下文中的 IP 设置是随意选取的。</p>
+
+<p>​	在真实的网络环境中，你应该调整 IP 设置，以防地址冲突</p>
+
+<p><strong>通用名词解释</strong></p>
+
+<p>​</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>名词</th>
+      <th>含义</th>
+      <th>中文翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SINEMA RC</td>
+      <td>SINEMA Remote Connect</td>
+      <td>西门子远程连接</td>
+    </tr>
+    <tr>
+      <td>SINEMA RC Server</td>
+      <td>SINEMA Remote Connect Server</td>
+      <td>西门子远程连接服务器</td>
+    </tr>
+    <tr>
+      <td>S615</td>
+      <td>SCALANCE S615</td>
+      <td>西门子S615安全功能模块</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>​</p>
+
+<p><strong>更多信息</strong></p>
+
+<p>除本文外，关于远程网络(Remote Network)还有以下文档可以参考：</p>
+
+<ul>
+  <li>
+    <p>工业以太网安全-S615基于网络管理的手动配置（Industrial Ethernet Security - SCALANCE S615 Web Based Management）</p>
+
+    <p>本文档旨在为您提供安装，调试和操作设备所需的信息。 它为您提供配置设备所需的信息</p>
+  </li>
+  <li>
+    <p>《工业远程通信-远程控制西门子连接客户端》（Industrial Remote Communication - TeleControl SINEMA Remote Connect Client）</p>
+
+    <p>本手册在安装，配置和运行应用程序SINEMA RC Client时为您提供支持。</p>
+  </li>
+  <li>
+    <p>《工业远程通信-远程控制西门子连接服务器操作说明》（Industrial Remote Communication - TeleControl SINEMA Remote Connect Server” operating instructions）</p>
+  </li>
+</ul>
+
+<p>本手册在安装，配置和运行应用程序SINEMA RC Server时为您提供支持。</p>
+
+<ul>
+  <li>《工业远程通信入门-远程控制西门子远程连接》（Getting Started Industrial Remote Communication - TeleControl - SINEMA Remote Connect”）</li>
+</ul>
+
+<p>根据示例，本文档介绍了SINEMA RC的配置。</p>
+
+<ul>
+  <li>《 SIMATIC NET工业以太网网络手册》(“SIMATIC NET Industrial Ethernet Network Manual”)包含有关其他SIMATIC NET产品的信息，您可以将其与该产品系列的设备一起在工业以太网中一起使用。 在那里，您将找到安装所需的通信伙伴的光学性能数据。
+(http://support.automation.siemens.com/WW/view/en/27069465)</li>
+</ul>
+
+<p>获取更多信息，请访问： http://support.automation.siemens.com</p>
+
+<h2 id="1连接-scalance-s615-到广域网">1、连接 SCALANCE S615 到广域网</h2>
+
+<h3 id="11-基本步骤">1.1 基本步骤</h3>
+
+<p><strong>Structure</strong></p>
+
+<p><img src="\pic\structure.png" alt="" /></p>
+
+<p>所需组件：</p>
+
+<ul>
+  <li>1 x S615（附加选项：适当安装的带配件的标准导轨）</li>
+  <li>
+    <p>1 x 24 V 电源供电</p>
+  </li>
+  <li>
+    <p>1 x PC 用来配置 S615</p>
+  </li>
+  <li>符合RJ-45工业以太网标准的网络电缆线，双绞线</li>
+</ul>
+:ET

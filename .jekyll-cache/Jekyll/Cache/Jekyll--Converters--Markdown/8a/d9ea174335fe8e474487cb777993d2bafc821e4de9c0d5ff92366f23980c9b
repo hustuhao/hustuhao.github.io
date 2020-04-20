@@ -1,0 +1,64 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#线程池如何使用" id="markdown-toc-线程池如何使用">线程池如何使用</a>    <ul>
+      <li><a href="#架构说明" id="markdown-toc-架构说明">架构说明</a></li>
+    </ul>
+  </li>
+  <li><a href="#线程池的重要参数" id="markdown-toc-线程池的重要参数">线程池的重要参数</a></li>
+</ul>
+
+<p><strong>为什么要使用线程池？</strong></p>
+
+<p>线程池做的工作主要是控制运行的线程的数量，处理过程中将任务放入队列，然后在线程创建后启动这些任务，如果线程数量超过了最大数量超出数量的线程排队等候，等其它线程执行完毕，再从队列中取出任务来执行。</p>
+
+<p>线程池主要特点为：线程复用；控制最大并发数；管理线程。</p>
+
+<p>第一：降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。</p>
+
+<p>第二：提高响应速度。当任务到达时，任务可以不需要的等到线程创建就能立即执行。</p>
+
+<p>第三：提高线程的可管理性。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控</p>
+
+<h1 id="线程池如何使用">线程池如何使用</h1>
+<h2 id="架构说明">架构说明</h2>
+
+<p>线程的四种创建方法：</p>
+<ul>
+  <li>Thread</li>
+  <li>Runnable</li>
+  <li>Callable</li>
+  <li>线程池</li>
+</ul>
+
+<p>Java中的线程池是通过Executor框架实现
+Executors(辅助工具类)
+池化技术，最后关闭池子就行</p>
+
+<p>核心类：<code class="highlighter-rouge">ThreadPoolExecutor</code></p>
+
+<p>永远传参传接口</p>
+
+<h1 id="线程池的重要参数">线程池的重要参数</h1>
+
+<p>源码查看：</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nf">ThreadPoolExecutor</span><span class="o">(</span>
+    <span class="kt">int</span> <span class="n">corePoolSize</span><span class="o">,</span>
+    <span class="kt">int</span> <span class="n">maximumPoolSize</span><span class="o">,</span>
+    <span class="kt">long</span> <span class="n">keepAliveTime</span><span class="o">,</span>
+    <span class="nd">@NotNull</span> <span class="nc">TimeUnit</span> <span class="n">unit</span><span class="o">,</span>
+    <span class="nd">@NotNull</span> <span class="nc">BlockingQueue</span><span class="o">&lt;</span><span class="nc">Runnable</span><span class="o">&gt;</span> <span class="n">workQueue</span><span class="o">,</span>
+    <span class="nd">@NotNull</span> <span class="nc">ThreadFactory</span> <span class="n">threadFactory</span><span class="o">,</span>
+    <span class="nd">@NotNull</span> <span class="nc">RejectExecutionHandler</span> <span class="n">handler</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>七大参数</p>
+
+<ul>
+  <li>1.<code class="highlighter-rouge">corePoolSize</code>：线程池中的常驻核心线程数</li>
+  <li>2.<code class="highlighter-rouge">maximumPoolSize</code>：线程池能够容纳同时执行的最大线程数，此值必须大于等于1.</li>
+  <li>3.<code class="highlighter-rouge">keepAliveTime</code>：多余的空闲线程的存活时间。当前线程池数量超过<code class="highlighter-rouge">corePoolSize</code>时，当空闲时间达到<code class="highlighter-rouge">keepAliveTime</code>值时，多余空闲线程会被销毁直到只剩下<code class="highlighter-rouge">corePoolSize</code>个线程为止。</li>
+  <li>4.<code class="highlighter-rouge">unit</code>: <code class="highlighter-rouge">keepAliveTime</code>的单位</li>
+  <li>5.<code class="highlighter-rouge">workQueue</code>：任务队列，被提交但尚未被执行的任务。(阻塞队列)</li>
+  <li>6.<code class="highlighter-rouge">threadFactory</code>：表示生成线程池中工作线程的线程工厂，用于创建线程一般用默认的即可。</li>
+  <li>7.<code class="highlighter-rouge">handler</code>：拒绝策略，表示当队列满了并且工作线程大于等于线程池的最大线程数的时候，应该如何做。</li>
+</ul>
+:ET

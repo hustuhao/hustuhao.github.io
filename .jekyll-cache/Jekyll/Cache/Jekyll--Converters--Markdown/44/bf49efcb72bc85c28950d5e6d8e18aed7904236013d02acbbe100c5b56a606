@@ -1,0 +1,43 @@
+I"(<ul id="markdown-toc">
+  <li><a href="#网络应用模型" id="markdown-toc-网络应用模型">网络应用模型</a></li>
+</ul>
+
+<h2 id="网络应用模型">网络应用模型</h2>
+
+<p>应用层对应用程序的通信提供服务。</p>
+
+<p><strong>应用层协议定义：</strong></p>
+
+<ul>
+  <li>应用进程交换的报文类型，请求还是响应？</li>
+  <li>各种报文类型的语法，如报文中的各个字段及其详细描述字段的语义，即包含在字段中的信息的含义</li>
+  <li>进程何时、如何发送报文，以及对报文进行响应的规则</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>应用层的功能</th>
+      <th>应用层的重要协议</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>文件传输、访问和管理</td>
+      <td>FTP</td>
+    </tr>
+    <tr>
+      <td>电子邮件</td>
+      <td>SMTP、POP3</td>
+    </tr>
+    <tr>
+      <td>虚拟终端</td>
+      <td>HTTP</td>
+    </tr>
+    <tr>
+      <td>查询服务和远程作业登录</td>
+      <td>DNS</td>
+    </tr>
+  </tbody>
+</table>
+:ET
