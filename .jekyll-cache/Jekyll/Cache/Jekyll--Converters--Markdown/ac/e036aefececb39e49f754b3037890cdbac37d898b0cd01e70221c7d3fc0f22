@@ -1,4 +1,4 @@
-I"Č<ul id="markdown-toc">
+I"��<ul id="markdown-toc">
   <li><a href="#前言" id="markdown-toc-前言"><strong>前言</strong></a></li>
   <li><a href="#1连接-scalance-s615-到广域网" id="markdown-toc-1连接-scalance-s615-到广域网">1、连接 SCALANCE S615 到广域网</a>    <ul>
       <li><a href="#11-基本步骤" id="markdown-toc-11-基本步骤">1.1 基本步骤</a></li>
@@ -362,7 +362,7 @@ IP地址在Web浏览器的地址栏中自动调整。 因为其IP设置不再匹
 
 <p>在此示例组态中，使用SCALANCE S615连接了两个分布式站(Station1 , Station2)。 这些设备通过主站中的SINEMA RC服务器( Server )进行通信。</p>
 
-<p>每个SCALANCE S615设备都需要一个KEY-PLUG SINEMA Remote Connect。 <code class="highlighter-rouge">KEY-PLUG</code>允许从SCALANCE S615到SINEMA RC的连接。</p>
+<p>每个SCALANCE S615设备都需要一个KEY-PLUG SINEMA Remote Connect。 <code class="language-plaintext highlighter-rouge">KEY-PLUG</code>允许从SCALANCE S615到SINEMA RC的连接。</p>
 
 <p>为此，设备需要登录到SINEMA RC Server。 设备和SINEMA RC Server之间的VPN隧道仅在成功通过身份验证后建立.SINEMA RC Server根据配置的通信关系和安全设置连接各个VPN隧道</p>
 
@@ -681,10 +681,10 @@ IP地址在Web浏览器的地址栏中自动调整。 因为其IP设置不再匹
 <ul>
   <li>在PC1 / 2上，打开两个Web浏览器窗口。</li>
   <li>Web浏览器1：
-您以<code class="highlighter-rouge">admin</code>身份登录到S615的<code class="highlighter-rouge">WBM</code>。</li>
+您以<code class="language-plaintext highlighter-rouge">admin</code>身份登录到S615的<code class="language-plaintext highlighter-rouge">WBM</code>。</li>
   <li>Web浏览器2：
-您以用户<code class="highlighter-rouge">service</code>或<code class="highlighter-rouge">admin</code>的身份登录到<code class="highlighter-rouge">SINEMA RC Server</code>的<code class="highlighter-rouge">WBM</code>。</li>
-  <li>在<code class="highlighter-rouge">S615</code>中插入了有效的<code class="highlighter-rouge">KEY-PLUG</code>。</li>
+您以用户<code class="language-plaintext highlighter-rouge">service</code>或<code class="language-plaintext highlighter-rouge">admin</code>的身份登录到<code class="language-plaintext highlighter-rouge">SINEMA RC Server</code>的<code class="language-plaintext highlighter-rouge">WBM</code>。</li>
+  <li>在<code class="language-plaintext highlighter-rouge">S615</code>中插入了有效的<code class="language-plaintext highlighter-rouge">KEY-PLUG</code>。</li>
 </ul>
 
 <p><strong>步骤</strong></p>
@@ -692,26 +692,26 @@ IP地址在Web浏览器的地址栏中自动调整。 因为其IP设置不再匹
 <p>1.切换到Web浏览器1。</p>
 <ul>
   <li>在Web浏览器的地址框中，输入S615的LAN IP地址，请参见表“使用的设置（2.1节）”。</li>
-  <li>以<code class="highlighter-rouge">admin</code>用户身份登录并使用相应的密码。</li>
+  <li>以<code class="language-plaintext highlighter-rouge">admin</code>用户身份登录并使用相应的密码。</li>
   <li>在导航区域中单击 “System”&gt;“ SINEMA RC”。</li>
   <li>对于“ SINEMA RC地址”，输入SINEMA RC服务器的WAN IP地址，请参见表“使用的设置（2.1节）”。</li>
 </ul>
 
 <p>2.切换到Web浏览器2</p>
 <ul>
-  <li>在Web浏览器的地址框中，输入<code class="highlighter-rouge">SINEMA RC Server</code>的WAN IP地址，请参见表“使用的设置（2.1节）”。</li>
-  <li>以<code class="highlighter-rouge">admin</code>用户身份和相应的密码登录。</li>
+  <li>在Web浏览器的地址框中，输入<code class="language-plaintext highlighter-rouge">SINEMA RC Server</code>的WAN IP地址，请参见表“使用的设置（2.1节）”。</li>
+  <li>以<code class="language-plaintext highlighter-rouge">admin</code>用户身份和相应的密码登录。</li>
   <li>在导航区域中，单击”Remote connections” &gt; “Devices”。</li>
-  <li>单击<code class="highlighter-rouge">Actions</code>中的符号以打开设备信息。</li>
+  <li>单击<code class="language-plaintext highlighter-rouge">Actions</code>中的符号以打开设备信息。</li>
   <li>按住鼠标左键，选择设备ID条目。</li>
   <li>右键单击所选内容，然后在快捷菜单中选择复制命令。</li>
 </ul>
 
 <p>3.切换到Web浏览器1。</p>
 <ul>
-  <li>右键单击<code class="highlighter-rouge">Device ID</code>的输入框。</li>
+  <li>右键单击<code class="language-plaintext highlighter-rouge">Device ID</code>的输入框。</li>
   <li>在快捷菜单中，选择要插入的菜单命令。</li>
-  <li>在<code class="highlighter-rouge">Device Password</code>中，输入为访问配置的密码，对于S615-1，输入An:t_010，对于S615-2，输入At:t_020。</li>
+  <li>在<code class="language-plaintext highlighter-rouge">Device Password</code>中，输入为访问配置的密码，对于S615-1，输入An:t_010，对于S615-2，输入At:t_020。</li>
   <li>启用“自动防火墙/ NAT规则”。
 启用后，将自动创建合适的NAT和防火墙规则。对于“Verification Type”（验证类型），请选择“Fingerprint”（指纹）。</li>
 </ul>
@@ -725,9 +725,9 @@ IP地址在Web浏览器的地址栏中自动调整。 因为其IP设置不再匹
 <p>5.切换到web浏览器1。</p>
 
 <ul>
-  <li>右键单击<code class="highlighter-rouge">Fingerprint</code>输入框。</li>
+  <li>右键单击<code class="language-plaintext highlighter-rouge">Fingerprint</code>输入框。</li>
   <li>在快捷菜单中，选择要插入的菜单命令。</li>
-  <li>选择<code class="highlighter-rouge">Enable SINEMA RC</code>，然后单击“设置值”。</li>
+  <li>选择<code class="language-plaintext highlighter-rouge">Enable SINEMA RC</code>，然后单击“设置值”。</li>
 </ul>
 
 <p><img src="\pic\SINEMARemoteConnect.png" alt="SINEMARemoteConnect" /></p>
@@ -747,7 +747,7 @@ Web浏览器1：在导航区域中，单击“Information”&gt;“ SINEMA RC”
 <h5 id="2421-加载证书">2.4.2.1 加载证书</h5>
 
 <p><strong>需求</strong>
-●在<code class="highlighter-rouge">S615</code>和<code class="highlighter-rouge">SINEMA RC Server</code>上设置了正确的时间。
+●在<code class="language-plaintext highlighter-rouge">S615</code>和<code class="language-plaintext highlighter-rouge">SINEMA RC Server</code>上设置了正确的时间。
 ●在PC1 / 2上，分别打开两个Web浏览器窗口。
 ●Web浏览器1：
 您以“ admin”身份登录到S615的WBM。
@@ -767,7 +767,7 @@ Web浏览器1：在导航区域中，单击“Information”&gt;“ SINEMA RC”
 <p>2.切换到Web浏览器1。</p>
 <ul>
   <li>在Web浏览器的地址框中，输入S615的LAN IP地址，请参见表“使用的设置（2.1节）”。</li>
-  <li>以<code class="highlighter-rouge">admin</code>用户身份登录并使用相应的密码。</li>
+  <li>以<code class="language-plaintext highlighter-rouge">admin</code>用户身份登录并使用相应的密码。</li>
   <li>在导航区域中以及内容区域中的“ HTTP”选项卡上，单击“System”&gt;“Load &amp; Save”。</li>
   <li>单击“ X509Cert”旁边的“Load”按钮。打开用于加载文件的对话框。</li>
   <li>导航到导出的服务器证书。在对话框中单击“打开”按钮。
@@ -784,7 +784,7 @@ Web浏览器1：在导航区域中，单击“Information”&gt;“ SINEMA RC”
 <p><strong>要求</strong></p>
 
 <ul>
-  <li>在S615上插入有效的<code class="highlighter-rouge">KEY PLUG</code></li>
+  <li>在S615上插入有效的<code class="language-plaintext highlighter-rouge">KEY PLUG</code></li>
 </ul>
 
 <p><strong>步骤</strong></p>
@@ -798,16 +798,16 @@ Web浏览器1：在导航区域中，单击“Information”&gt;“ SINEMA RC”
 <p>2.切换到Web浏览器2。</p>
 <ul>
   <li>在导航区域中，单击“Remote Connections”&gt;“Devices”。</li>
-  <li>单击“Action”（操作）中的符号<code class="highlighter-rouge"> ！</code>以打开设备信息。</li>
+  <li>单击“Action”（操作）中的符号<code class="language-plaintext highlighter-rouge"> ！</code>以打开设备信息。</li>
   <li>按住鼠标左键，选择设备ID条目。</li>
   <li>右键单击所选内容，然后在快捷菜单中选择复制命令。</li>
 </ul>
 
 <p>3.更改为Web浏览器1。</p>
 <ul>
-  <li>右键单击<code class="highlighter-rouge">Device ID</code>的输入框。</li>
+  <li>右键单击<code class="language-plaintext highlighter-rouge">Device ID</code>的输入框。</li>
   <li>在快捷菜单中，选择要插入的菜单命令。</li>
-  <li>在<code class="highlighter-rouge">Device Password</code>中，输入为访问配置的密码，对于S615-1，输入An:t_010，对于S615-2，输入An:t_020。</li>
+  <li>在<code class="language-plaintext highlighter-rouge">Device Password</code>中，输入为访问配置的密码，对于S615-1，输入An:t_010，对于S615-2，输入An:t_020。</li>
   <li>启用“自动防火墙/ NAT规则”。
 启用后，将自动创建合适的NAT和防火墙规则。在“验证类型”中，选择“ CA证书”。</li>
   <li>在“ CA证书”中选择服务器证书。 只能选择已加载的证书</li>

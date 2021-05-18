@@ -1,0 +1,684 @@
+I"L�<ul id="markdown-toc">
+  <li><a href="#网络应用模型" id="markdown-toc-网络应用模型">网络应用模型</a>    <ul>
+      <li><a href="#cs模型" id="markdown-toc-cs模型">C/S模型</a></li>
+      <li><a href="#p2p模型" id="markdown-toc-p2p模型">P2P模型</a></li>
+    </ul>
+  </li>
+  <li><a href="#域名解析系统-dns" id="markdown-toc-域名解析系统-dns">域名解析系统 DNS</a>    <ul>
+      <li><a href="#域名解析过程" id="markdown-toc-域名解析过程">域名解析过程</a></li>
+    </ul>
+  </li>
+  <li><a href="#文件传输协议ftp" id="markdown-toc-文件传输协议ftp">文件传输协议FTP</a></li>
+  <li><a href="#万维网" id="markdown-toc-万维网">万维网</a>    <ul>
+      <li><a href="#http协议" id="markdown-toc-http协议">http协议</a>        <ul>
+          <li><a href="#1-http操作过程" id="markdown-toc-1-http操作过程">1、	HTTP操作过程</a></li>
+          <li><a href="#2代理服务器" id="markdown-toc-2代理服务器">2、代理服务器</a></li>
+          <li><a href="#3http报文结构" id="markdown-toc-3http报文结构">3、HTTP报文结构</a></li>
+          <li><a href="#4在服务器上存放用户的信息" id="markdown-toc-4在服务器上存放用户的信息">4、在服务器上存放用户的信息</a></li>
+        </ul>
+      </li>
+      <li><a href="#万维网的文档" id="markdown-toc-万维网的文档">万维网的文档</a>        <ul>
+          <li><a href="#html" id="markdown-toc-html">HTML</a></li>
+          <li><a href="#动态万维网文档-" id="markdown-toc-动态万维网文档-">**动态万维网文档 **</a></li>
+          <li><a href="#活动万维网文档" id="markdown-toc-活动万维网文档"><strong>活动万维网文档</strong></a></li>
+          <li><a href="#搜索引擎" id="markdown-toc-搜索引擎">搜索引擎</a></li>
+        </ul>
+      </li>
+      <li><a href="#动态主机配置协议-dhcp" id="markdown-toc-动态主机配置协议-dhcp">动态主机配置协议 DHCP</a></li>
+      <li><a href="#简单网络管理协议-snmp" id="markdown-toc-简单网络管理协议-snmp">简单网络管理协议 SNMP</a></li>
+    </ul>
+  </li>
+  <li><a href="#其他应用层协议" id="markdown-toc-其他应用层协议">其他应用层协议</a>    <ul>
+      <li><a href="#远程登录-telnet" id="markdown-toc-远程登录-telnet">远程登录 Telnet</a></li>
+      <li><a href="#微信qq" id="markdown-toc-微信qq">微信、QQ</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="网络应用模型">网络应用模型</h2>
+
+<p>应用层对应用程序的通信提供服务。</p>
+
+<p><strong>应用层协议定义：</strong></p>
+
+<ul>
+  <li>应用进程交换的报文类型，请求还是响应？</li>
+  <li>各种报文类型的语法，如报文中的各个字段及其详细描述字段的语义，即包含在字段中的信息的含义</li>
+  <li>进程何时、如何发送报文，以及对报文进行响应的规则</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>应用层的功能</th>
+      <th>应用层的重要协议</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>文件传输、访问和管理</td>
+      <td>FTP</td>
+    </tr>
+    <tr>
+      <td>电子邮件</td>
+      <td>SMTP、POP3</td>
+    </tr>
+    <tr>
+      <td>虚拟终端</td>
+      <td>HTTP</td>
+    </tr>
+    <tr>
+      <td>查询服务和远程作业登录</td>
+      <td>DNS</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>网络应用模型</p>
+
+<ul>
+  <li>客户/服务器模型（Client/Server）</li>
+  <li>P2P模型（Peer-to-peer）</li>
+</ul>
+
+<h3 id="cs模型">C/S模型</h3>
+
+<p>服务器：提供计算服务的设备。</p>
+
+<ul>
+  <li>1、永久提供服务</li>
+  <li>2、永久性访问地址/域名</li>
+</ul>
+
+<p>客户机：请求计算服务的主机。</p>
+<ul>
+  <li>1、与服务器通信，使用服务器提供的服务</li>
+  <li>2、间歇性接入网络</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>3、可能使用动态</td>
+          <td>P地址</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>4、不与其他客户机直接通信</li>
+</ul>
+
+<p>应用：Web，文件传输FTP，远程登录，电子邮件</p>
+
+<h3 id="p2p模型">P2P模型</h3>
+
+<ul>
+  <li>不存在永远在线的服务器</li>
+  <li>每个主机既可以提供服务，也可以请求服务</li>
+  <li>任意端系统/节点之间可以直接通讯节点</li>
+  <li>间歇性接入网络</li>
+  <li>节点可能改变P地址</li>
+  <li>可扩展性好</li>
+  <li>网络健壮性强</li>
+</ul>
+
+<h2 id="域名解析系统-dns">域名解析系统 DNS</h2>
+
+<p>DNS服务的作用：将域名解析成IP地址。</p>
+
+<p><strong>为什么需要域名解析？</strong></p>
+
+<p>用户与互联网上某台主机通信时，必须要知道对方的IP地址。然而影虎很难记住长达32位的二进制主机地址。为了方便用户记忆，所以采用域名系统。域名系统DNS能够把互联网上的主机名字转换为IP地址。</p>
+
+<p><strong>域名解析系统的结构</strong></p>
+
+<p>从理论上讲，整个互联网可以只使用一个域名服务器，使它装入互联网上所有的主机名，并回答所有对IP地址的査询。然而这种做法并不可取。因为互联网规模很大，这样的域名服务器肯定会因过负荷而无法正常工作，而且一旦域名服务器出现故障，整个互联网就会瘫痪。</p>
+
+<p>因此，早在1983年互联网就开始采用<strong>层次树状结构</strong>的命名方法，并使用分布式的域名系统DNS。DNS的互联网标准是RFC1034，1035。</p>
+
+<p>互联网的域名系统DNS被设计成为一个联机分布式数据库系统，并采用客户服务器方式。</p>
+
+<p>DNS使大多数名字都在本地进行解析（Resolve），仅少量解析需要在互联网上通信，因此DNS系统的效率很高。</p>
+
+<p><strong>域名到IP的解析过程</strong></p>
+
+<p>域名到IP地址的解析过程的要点如下：</p>
+
+<p>当某一个应用进程需要把主机名解析为IP地址时，该应用进程就调用解析程序（resolver），并成为DNS的一个客户，把待解析的域名放在DNS请求报文中，以UDP用户数据报方式发给本地域名服务器（使用UDP是为了减少开销）。</p>
+
+<p>本地域名服务器在査找域名后，把对应的IP地址放在回答报文中返回。应用进程获得目的主机的IP地址后即可进行通信。</p>
+
+<p>注：无论是哪个本地域名服务器，若要对Internet上任何一个域名进行解析，只要自己无法解析，首先就要求助于根域名服务器。假定所有的根域名服务器都瘫痪了，那么整个 DNS 系统就无法工作。</p>
+
+<p><img src="" alt="" /></p>
+<center>图 互联网的域名空间</center>
+
+<p>用域名书树表示Internet的域名系统如上图</p>
+
+<p>在国家顶级域名下注册的二级域名均由该国家自行确定。我国把二级域名划分为“类别域名”和“行政区域名”两大类。</p>
+
+<p>关于我国的互联网络发展现状以及各种规定（如申请域名的手续），均可在中国互联网网络信息中心CNNC的网址上找到[W-CNNIC]。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>域名</th>
+      <th>说明</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>顶级域名</td>
+      <td>国家顶级域名nTLD</td>
+      <td>cn 中国,us 美国</td>
+    </tr>
+    <tr>
+      <td>顶级域名</td>
+      <td>通用定义域名gTLD<br /></td>
+      <td>com 公司<br />net 网络服务机构<br />gov 政府部门<br />edu 教育机构<br />org 非营利组织<br /></td>
+    </tr>
+    <tr>
+      <td>顶级域名</td>
+      <td>基础结构域名</td>
+      <td>只有一个arpa，用于反向域名解析</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>根域名服务器采用了任播（anycast）技术，因此当DNS客户向某个根域名服务器的IP地址发出查询报文时，互联网上的路由器就能找到离这个DNS客户最近的一个根域名服务器。这样做不仅加快了DNS的查询过程，也更加合理地利用了互联网的资源。</p>
+
+<blockquote>
+  <p>任播技术（anycast）：任播的IP数据报的终点是一组在不同地点的主机，但具有相同的IP地址。IP数据报交付离源点最近的一台主机</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>域名服务器</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>根域名服务器</td>
+      <td>最高层次的域名服务器。所以有的根域名服务器知道所有的顶级域名服务器的域名和 IP 地址。</td>
+    </tr>
+    <tr>
+      <td>顶级域名服务器</td>
+      <td>负责管理在该顶级域名服务器注册的所有二级域名。当收到DNS查询请求时，就给出相应的回答（可能是最后的结果，也可能是下一步应当找的域名服务器的IP地址）。</td>
+    </tr>
+    <tr>
+      <td>权限域名服务器</td>
+      <td>当一个权限域名服务器还不能给出最后的查询回答时，就会告诉发出查询请求的DNS客户，下一步应当找哪一个权限域名服务器。</td>
+    </tr>
+    <tr>
+      <td>本地域名服务器</td>
+      <td>本地域名服务器并不属于域名服务器层次结构。当一台主机发出DNS查询请求时，这个查询请求报文就发送给本地域名服务器。（windows中设置的DNS服务器就是本地用户名服务器）</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>高速缓存</strong></p>
+
+<p>为了提高DNS查询效率，并减轻根域名服务器的负荷和减少互联网上的DNS查询报文数量，在域名服务器中广泛地使用了高速缓存（有时也称为高速缓存域名服务器）。高速缓存用来存放最近查询过的域名以及从何处获得域名映射信息的记录。</p>
+
+<p>不但在本地域名服务器中需要高速缓存，在主机中也很需要。许多主机在启动时从本地域名服务器下载名字和地址的全部数据库，维护存放自己最近使用的域名的高速缓存，并且只在从缓存中找不到名字时才使用域名服务器。维护本地域名服务器数据库的主机自然应该定期地检査域名服务器以获取新的映射信息，而且主机必须从缓存中删掉无效的项。由于</p>
+
+<blockquote>
+  <p>windows中的HOSTS文件：用户在浏览器中输入一个网址时，系统会首先自动从Hosts文件中寻找对应的IP地址，一旦找到，系统会立即打开对应网页，如果没有找到，则系统再会将网址提交，进行DNS域名解析，再获得相应的IP地址。</p>
+</blockquote>
+
+<h3 id="域名解析过程">域名解析过程</h3>
+
+<p>注意：</p>
+
+<p>主机向本地域名服务器的查询一般都是采用递归查询（recursive query），本地域名服务器向根域名服务器的查询通常是采用迭代查询（iterative query）</p>
+
+<p>面试常考：假定域名为<code class="language-plaintext highlighter-rouge">m.xyz.com</code>的主机想知道另一台主机（域名为<code class="language-plaintext highlighter-rouge">y.abc.com</code>）的IP地址。例如，主机<code class="language-plaintext highlighter-rouge">m.xyz.com</code>打算发送邮件给主机<code class="language-plaintext highlighter-rouge">y.abc.com</code>。这时就必须知道主机<code class="language-plaintext highlighter-rouge">y.abc.com</code>的I地址。</p>
+
+<p>下面查询步骤
+1、主机<code class="language-plaintext highlighter-rouge">m.xyz.com</code>先向其本地域名服务器<code class="language-plaintext highlighter-rouge">dns.xyz.com</code>进行递归查询。
+2、本地域名服务器采用迭代査询。它先向一个根域名服务器查询
+3、根域名服务器告诉本地域名服务器，下一次应查询的顶级域名服务器<code class="language-plaintext highlighter-rouge">dns.com</code>的IP地址。
+4、本地域名服务器向顶级域名服务器 <code class="language-plaintext highlighter-rouge">dns.com</code>进行查询
+5、顶级域名服务器<code class="language-plaintext highlighter-rouge"> dns.com</code>告诉本地域名服务器，下一次应查询的权限域名服务<code class="language-plaintext highlighter-rouge">dns.abc.com</code>的<code class="language-plaintext highlighter-rouge">IP</code>地址。
+6、本地域名服务器向权限域名服务器 <code class="language-plaintext highlighter-rouge">dns.abc.com</code>进行查询。
+7、权限域名服务器<code class="language-plaintext highlighter-rouge">dns.abc.com</code>告诉本地域名服务器，所查询的主机的<code class="language-plaintext highlighter-rouge">IP</code>地址。
+8、本地域名服务器最后把查询结果告诉主机<code class="language-plaintext highlighter-rouge">m.xyz.com</code>。</p>
+
+<p>我们注意到，这8个步骤总共要使用8个<code class="language-plaintext highlighter-rouge">UDP</code>用户数据报的报文。本地域名服务器经过三次迭代查询后，从权限域名服务器<code class="language-plaintext highlighter-rouge">dns.abc.com</code>得到了主机<code class="language-plaintext highlighter-rouge">y.abc.com</code>的IP地址，最后把结果返回给发起查询的主机 <code class="language-plaintext highlighter-rouge">m.xyz.com</code>。</p>
+
+<h2 id="文件传输协议ftp">文件传输协议FTP</h2>
+
+<p>文件传送协议FTP（File transfer Protocol）[RFC959]</p>
+
+<p>FTP提供交互式的访问，允许客户指明文件的类型与格式（如指明是否使用ASCI码），并允许文件具有存取权限（如访问文件的用户必须经过授权，并输入有效的口令）。FTP屏蔽了各计算机系统的细节，因而适合于在异构网络中任意计算机之间传送文件。</p>
+
+<p>文件传送协议FTP只提供文件传送的一些基本的服务，它使用TCP可靠的运输服务。
+FTP的主要功能是减少或消除在不同操作系统下处理文件的不兼容性。FTP是基于客户/服务器（C/S）的协议</p>
+
+<p>采用双 TCP 连接,一个是控制连接，另外一个是数据连接</p>
+
+<h2 id="万维网">万维网</h2>
+
+<p>万维网必须解决以下几个问题：</p>
+
+<p>（1）怎样标志分布在整个互联网上的万维网文档？</p>
+
+<p>为了解决第一个问题，万维网使用统一资源定位符URL（Uniform Resource Locator）来标志万维网上的各种文档，并使每一个文档在整个互联网的范围内具有唯一的标识符URL。</p>
+
+<p>（2）用什么样的协议来实现万维网上的各种链接？</p>
+
+<p>为了解决上述的第二个问题，就要使万维网客户程序与万维网服务器程序之间的交互遵守严格的协议，这就是超文本传送协议HTTP（HyperTextTransferProtocol）。</p>
+
+<p>（3）怎样使不同作者创作的不同风格的万维网文档，都能在互联网上的各种主机上显示出来，同时使用户清楚地知道在什么地方存在着链接？</p>
+
+<p>为了解决上述的第三个问题，万维网使用超文本标记语言HTML（Hyper Text Markup Language），使得万维网页面的设计者可以很方便地用链接从本页面的某处链接到互联网上的任何一个万维网页面，并且能够在自己的主机屏幕上将这些页面显示出来</p>
+
+<p>（4）怎样使用户能够很方便地找到所需的信息？
+用户可使用搜索工具在万维网上方便地查找所需的信息。</p>
+
+<h3 id="http协议">http协议</h3>
+
+<p>HTTP协议定义了浏览器（即万维网客户进程）怎样向万维网服务器请求万维网文档，以及服务器怎样把文档传送给浏览器。</p>
+
+<p>从层次的角度看，HTTP是面向事务的Transaction-oriented应用层协议，它是万维网上能够可靠地交换文件（包括文本、声音、图像等各种多媒体文件）的重要基础。请注意，HTTP不仅传送完成超文本跳转所必需的信息，而且也</p>
+
+<blockquote>
+  <p>注：所谓事务（transaction）就是指一系列的信息交换，而这一系列的信息交换是一个不可分割的整体，也就是说，要么所有的信息交换都完成，要么一次交换都不进行。</p>
+</blockquote>
+
+<h4 id="1-http操作过程">1、	HTTP操作过程</h4>
+
+<h4 id="2代理服务器">2、代理服务器</h4>
+
+<p>代理服务器（proxy server）是一种网络实体，它又称为万维网高速缓存（Web cache）。代理服务器把最近的一些请求和响应暂存在本地磁盘中。当新请求到达时，若代理服务器发现这个请求与暂时存放的请求相同，就返回暂存的响应，而不需要按URL的地址再次去互联网访问该资源。代理服务器可在客户端或服务器端工作，也可在中间系统上工作。</p>
+
+<p>作用：减轻链路和主服务器的负担，减少时延。</p>
+
+<h4 id="3http报文结构">3、HTTP报文结构</h4>
+
+<p>HTTP有两类报文：</p>
+
+<p>（1）请求报文—从客户向服务器发送请求报文，见图（a）
+（2）响应报文—从服务器到客户的回答，见图（b）</p>
+
+<p><img src="/pic/HTTP报文结构.png" alt="" /></p>
+
+<p>HTTP请求报文和响应报文都是由三个部分组成的：</p>
+
+<p>（1）开始行，用于区分是请求报文还是响应报文。</p>
+
+<p>在请求报文中的开始行叫做请求行（Request-Line），而在响应报文中的开始行叫做状态行（Status-Line）。在开始行的三个字段之间都以空格分隔开，最后的“CR”和“LF”分别代表“回车”和“换行”。</p>
+
+<p>（2）首部行，用来说明浏览器、服务器或报文主体的一些信息。</p>
+
+<p>首部可以有好几行，但也可以不使用。在每一个首部行中都有首部字段名和它的值，每一行在结束的地方都要有回车”和“换行”。整个首部行结束时，还有一空行将首部行和后面的实体主体分开。</p>
+
+<p>（3）实体主体（entity body），在请求报文中一般都不用这个字段，而在响应报文中也可能没有这个字段。</p>
+
+<center> 表 HTTP协议请求的一些方法 </center>
+
+<table>
+  <thead>
+    <tr>
+      <th>方法</th>
+      <th>意义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GET</td>
+      <td>请求读取由URL所标志的信息</td>
+    </tr>
+    <tr>
+      <td>PUT</td>
+      <td>在指明的URL下存储一个文档</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>给服务器添加信息（例如，注释,表单）</td>
+    </tr>
+    <tr>
+      <td>OPTION</td>
+      <td>请求一些选项的信息</td>
+    </tr>
+    <tr>
+      <td>HEAD</td>
+      <td>请求读取由URL所标志的信息的首部</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>删除指明的URL所标志的资源</td>
+    </tr>
+    <tr>
+      <td>TRACE</td>
+      <td>用来进行环回测试的请求报文</td>
+    </tr>
+    <tr>
+      <td>CONNECT</td>
+      <td>用于代理服务器</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>访问www.baidu.com:</p>
+
+<p>Response Headers:</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Bdpagetype</span><span class="p">:</span> <span class="s">2</span>
+<span class="na">Bdqid</span><span class="p">:</span> <span class="s">0xce035d8e00436956</span>
+<span class="na">Cache-Control</span><span class="p">:</span> <span class="s">private</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">Keep-Alive</span>
+<span class="na">Content-Encoding</span><span class="p">:</span> <span class="s">gzip</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">text/html;charset=utf-8</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Fri, 06 Dec 2019 02:03:28 GMT</span>
+<span class="na">Expires</span><span class="p">:</span> <span class="s">Fri, 06 Dec 2019 02:03:28 GMT</span>
+<span class="na">Server</span><span class="p">:</span> <span class="s">BWS/1.1</span>
+<span class="na">Set-Cookie</span><span class="p">:</span> <span class="s">BDSVRTM=359; path=/</span>
+<span class="na">Set-Cookie</span><span class="p">:</span> <span class="s">BD_HOME=1; path=/</span>
+<span class="na">Set-Cookie</span><span class="p">:</span> <span class="s">H_PS_PSSID=1456_21085_30210_30087_22160; path=/; domain=.baidu.com</span>
+<span class="na">Strict-Transport-Security</span><span class="p">:</span> <span class="s">max-age=172800</span>
+<span class="na">Traceid</span><span class="p">:</span> <span class="s">1575597808281574682614844811661214443862</span>
+<span class="na">X-Ua-Compatible</span><span class="p">:</span> <span class="s">IE=Edge,chrome=1</span>
+<span class="na">Transfer-Encoding</span><span class="p">:</span> <span class="s">chunked</span>
+</code></pre></div></div>
+
+<p>Request Headers:</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">GET</span> <span class="nn">/</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">www.baidu.com</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">keep-alive</span>
+<span class="na">Upgrade-Insecure-Requests</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">User-Agent</span><span class="p">:</span> <span class="s">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36</span>
+<span class="na">Sec-Fetch-Mode</span><span class="p">:</span> <span class="s">navigate</span>
+<span class="na">Sec-Fetch-User</span><span class="p">:</span> <span class="s">?1</span>
+<span class="na">Accept</span><span class="p">:</span><span class="s">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3</span>
+<span class="na">Sec-Fetch-Site</span><span class="p">:</span> <span class="s">none</span>
+<span class="na">Accept-Encoding</span><span class="p">:</span> <span class="s">gzip, deflate, br</span>
+<span class="na">Accept-Language</span><span class="p">:</span> <span class="s">zh-CN,zh;q=0.9,en;q=0.8</span>
+<span class="na">Cookie</span><span class="p">:</span> <span class="s">省略</span>
+</code></pre></div></div>
+
+<p>HTTP响应报文</p>
+
+<p>每一个请求报文发出后，都能收到一个响应报文。响应报文的第一行就是状态行。</p>
+
+<p>状态行包括三项内容，即HTTP的版本，状态码，以及解释状态码的简单短语。</p>
+
+<p>状态码（Status-Code）都是三位数字的，分为5大类，原先有33种[RFC2616]，后来又增加了几种[RFC6585]这5大类的状态码都是以不同的数字开头的。</p>
+<ul>
+  <li>1xx 表示通知信息，如请求收到了或正在进行处理。</li>
+  <li>2xx 表示成功，如接受或知道了。</li>
+  <li>3xx 表示重定向，如要完成请求还必须采取进一步的行动</li>
+  <li>4xx 表示客户的差错，如请求中有错误的语法或不能完成。</li>
+  <li>5xx 表示服务器的差错，如服务器失效无法完成请求。</li>
+</ul>
+
+<p>常见的一些状态响应码：</p>
+
+<p>200</p>
+
+<p>401   请求要求身份验证。</p>
+
+<p>404 not found</p>
+
+<p>403   服务器拒绝请求。</p>
+
+<p>301 move Permanently</p>
+
+<p>304   （未修改）</p>
+
+<h4 id="4在服务器上存放用户的信息">4、在服务器上存放用户的信息</h4>
+
+<p>HTTP是无状态的，这虽然简化了服务器的设计，但是在实际工作中，我们常常希望识别用户。</p>
+
+<p>比如购物网站的购物车保存用户希望购买的商品。</p>
+
+<p>可以在HTTP中使用Cookie。在[RFC 6265]中对Cookie进行了定义，规定万维网站点可以使用 Cookie来跟踪用户。</p>
+
+<p><strong>cookie是如何工作的</strong></p>
+
+<p>Cookie是这样工作的。当用户A浏览某个使用 Cookie的网站时，该网站的服务器就为A产生一个唯一的识别码，并以此作为索引在服务器的后端数据库中产生一个项目。</p>
+
+<p>接着在给A的HTTP响应报文中添加一个叫做 Set-cookie的首部行。这里的“首部字段名”就是Set-cookie”，而后面的“值”就是赋予该用户的“识别码”。例如这个首部行是这样的：<code class="language-plaintext highlighter-rouge">Set-cookie: 31d4d96e407aad42</code></p>
+
+<p>当A收到这个响应时，其浏览器就在它管理的特定 Cookie文件中添加一行，其中包括这个服务器的主机名和 Set-cookie后面给出的识别码。</p>
+
+<p>当A继续浏览这个网站时，每发送一个HTTP请求报文，其浏览器就会从其Cookie文件中取出这个网站的识别码，并放到HTTP请求报文的Cookie首部行中：</p>
+
+<p><code class="language-plaintext highlighter-rouge">Cookie：31d4d96e407aad42</code></p>
+
+<p>于是，这个网站就能够跟踪用户31d4d96e407aad42（用户A）在该网站的活动。需要注意的是，服务器并不需要知道这个用户的真实姓名以及其他的信息。但服务器能够知道用户31d4d96e407aad42在什么时间访问了哪些页面，以及访问这些页面的顺序。如果A是在网上购物，那么这个服务器可以为A维护一个所购物品的列表，使A在结束这次购物时可以一起付费。</p>
+
+<p>如果A在几天后再次访问这个网站，那么他的浏览器会在其HTTP请求报文中继续使用首部行</p>
+
+<p>` Cookie：31d4d96e407aad42`，而这个网站服务器根据A过去的访问记录可以向他推荐商品。</p>
+
+<p>如果A已经在该网站登记过和使用过信用卡付费，那么这个网站就已经保存了A的姓名、电子邮件地址、信用卡号码等信息。</p>
+
+<p>这样，当A继续在该网站购物时，只要还使用同一个电脑上网，由于浏览器产生的HTTP请求报文中都携带了同样的Cookie首部行，服务器就可利用 Cookie来验证出这是用户A，因此以后A在这个网站购物时就不必重新在键盘上输入姓名、信用卡号码等信息。这对顾客显然是很方便的</p>
+
+<p>cookie的优点和缺点：</p>
+
+<p>帮助浏览器跟踪用户，以提供给用户更好、更方便的服务。</p>
+
+<p>服务提供商可能会滥用用户的信息，导致用户信息泄露；黑客可以盗取cookie，</p>
+
+<p><strong>优点：极高的扩展性和可用性</strong>
+1、数据持久性
+2、不需要任何服务器资源，因为cookie是存储在客户端并发送给服务器读取
+3、可配置到期规则，控制cookie的生命周期，使之不会永远有效，偷盗者可能拿到的是一个过期的cookie
+4、简单性，基于文件的轻量结构
+5、通过良好的编程，控制保存在cookie中的Session对象的大小
+6、通过加密和安全传输技术（ssl），减少cookie被破解的可能性
+7、只要cookie中不存放敏感的数据，即使被盗也不会有重大损失</p>
+
+<p><strong>缺点：</strong>
+1、 cookie的数量和长度都有限制
+数量：cookie的数量有限</p>
+
+<ul>
+  <li>IE6及以下的版本最多20个cookie</li>
+  <li>IE7以后的可以有50个cookie</li>
+  <li>Firefox可以有50个cookie</li>
+  <li>chrome和safri没有限制</li>
+</ul>
+
+<p>长度：每个cookie的长度不超过4k，否则会被截掉</p>
+
+<p>2、潜在的安全风险：cookie可能被截取篡改，如果cookie被拦截，就可能会获取到所有的Session信息
+3、用户配置为禁用，有的用户禁用了浏览器或者客户端设备接受cookie的能力，因此限制了这一功能
+4、有些状态不可能保存在客户端，例如，为了防止重复提交表达，需要在服务器端保存一个计时器，如果把这个计时器保存在客户端，它将不起作用。</p>
+
+<p>注意：Cookie 通常用于为已知用户自定义内容的个性化情况。在大多数此类情况中，Cookie 是作为“标识”而不是“身份验证”。因此，通常保护用于标识的 Cookie 的方法是在 Cookie 中存储用户名、帐户名或唯一用户 ID（例如 GUID），然后用以访问站点的用户个性化结构中的信息。</p>
+
+<h3 id="万维网的文档">万维网的文档</h3>
+
+<h4 id="html">HTML</h4>
+
+<p>超文本标记语言HTML  HyperText Markup Language [RFC 2854]</p>
+
+<p>静态文档（static document）。在被用户浏览的过程中，内容不会改变。用户每次读取所得到的返回结果都是相同的。</p>
+
+<p>静态文档的最大优点是简单。由于HTML是一种排版语言，因此静态文档可以由不懂程序设计的人员来创建。但静态文档的缺点是不够灵活。当信息变化时就要由文档的作者手工对文档进行修改。可见，变化频繁的文档不适于做成静态文档。</p>
+
+<h4 id="动态万维网文档-">**动态万维网文档 **</h4>
+
+<p>动态文档（dynamic document）是指文档的内容是在浏览器访问万维网服务器时才由应用程序动态创建的。</p>
+
+<p>当浏览器请求到达时，万维网服务器要运行另一个应用程序，并把控制转移到此应用程序。</p>
+
+<p>接着，该应用程序对浏览器发来的数据进行处理，并输出HTTP格式的文档，万维网服务器把应用程序的输出作为对浏览器的响应。</p>
+
+<p>由于对浏览器每次请求的响应都是临时生成的，因此用户通过动态文档所看到的内容是不断变化的。</p>
+
+<p>动态文档的主要优点是具有报告当前最新信息的能力。例如，动态文档可用来报告股市行情、天气预报或民航售票情况等内容。但动态文档的创建难度比静态文档的高，因为动态文档的开发不是直接编写文档本身，而是编写用于生成文档的应用程序，这就要求动态文档的开发人员必须会编程，而所编写的程序还要通过大范围的测试，以保证输入的有效性。</p>
+
+<p>要实现动态文档就必须在以下两个方面对万维网服务器的功能进行扩充
+（1）应增加另一个应用程序，用来处理浏览器发来的数据，并创建动态文档。
+（2）应增加一个机制，用来使万维网服务器将浏览器发来的数据传送给这个应用程序，然后万维网服务器能够解释这个应用程序的输出，并向浏览器返回HTML文档。</p>
+
+<p>技术代表：CGI</p>
+
+<h4 id="活动万维网文档"><strong>活动万维网文档</strong></h4>
+
+<p>随着HTP和万维网浏览器的发展，动态文档已明显地不能满足发展的需要。这是因为，动态文档一旦建立，它所包含的信息内容也就固定下来而无法及时刷新屏幕。另外，像动画之类的显示效果，动态文档也无法提供。</p>
+
+<p>有两种技术可用于浏览器屏幕显示的连续更新。一种技术称为服务器推送（server push），这种技术是将所有的工作都交给服务器。服务器不断地运行与动态文档相关联的应用程序，定期更新信息，并发送更新过的文档。</p>
+
+<p>另一种提供屏幕连续更新的技术是活动文档（active document）。这种技术是把所有的工作都转移给浏览器端。每当浏览器请求一个活动文档时，服务器就返回一段活动文档程序副本，使该程序副本在浏览器端运行。这时，活动文档程序可与用户直接交互，并可连续地改变屏幕的显示。只要用户运行活动文档程序，活动文档的内容就可以连续地改变。由于活动文档技术不需要服务器的连续更新传送，对网络带宽的要求也不会太高。</p>
+
+<p>服务器动态生成文档技术主要有：</p>
+
+<ul>
+  <li>CGI - 公共网关接口，它是一个允许Web服务器与后端程序以及脚本进行通信的标准化接口。通常是web服务器收到一个客户端的请求并转发给CGI程序,CGI处理完成后生成html，最后由web服务器把结果返回给客户端。</li>
+  <li>PHP - PHP(Hypertext Preprocessor,超文本预处理器)，通过在HTML中插入脚本，然后让服务器执行这些脚本，以重生成最终发送给客服端的页面。</li>
+  <li>JSP - 与 PHP 类似，只是使用 java 语言</li>
+  <li>ASP - 是微软的产品，与 PHP , JSP 一样</li>
+</ul>
+
+<p>客户端动态生成文档技术主要有：</p>
+
+<ul>
+  <li>JavaScript - 是一种脚本语言，有客服端执行</li>
+  <li>applet - 被编译成 JVM 机器指令的 Java 小程序，它可以嵌入到 HTML 页面上，由具有 JVM 的浏览器执行。</li>
+  <li>ActiveX - 也是一种小程序是微软的 applet</li>
+</ul>
+
+<h4 id="搜索引擎">搜索引擎</h4>
+
+<p>搜索引擎，就是根据用户需求与一定算法，运用特定策略从互联网检索出制定信息反馈给用户的一门检索技术。</p>
+
+<p>搜索引擎依托于多种技术，如网络爬虫技术、检索排序技术、网页处理技术、大数据处理技术、自然语言处理技术等，为信息检索用户提供快速、高相关性的信息服务。</p>
+
+<p>搜索引擎技术的核心模块一般包括爬虫、索引、检索和排序等，同时可添加其他一系列辅助模块，以为用户创造更好的网络使用环境。</p>
+
+<p><strong>搜索引擎的工作过程</strong></p>
+
+<p>​	索引擎的工作过程大体分为四个步骤：爬行和抓取、建立索引、搜索词处理、展示排名。</p>
+
+<p>​	 人们日常使用搜索引擎查找资料的过程只是搜索引擎工作过程中的一个环节。首先，搜索引擎会向万维网派出一个能够发现新网页并抓取网页文件的程序，这个程序通常被称为蜘蛛（Spider）。其在工作的时候从网站的某一个页面开始，读取网页的内容，找到在网页中的其它链接地址，然后通过这些链接地址寻找下一个网页，这样一直循环下去，直到把这个网站所有的页面都抓取完为止。如果把整个互联网当做一张大网，那么这个程序就像是蜘蛛一样抓取所有的网页内容。在蜘蛛程序抓取了网页文件之后，通过对网页内容的分析和处理，对网页信息进行提取并组织建立索引库，即建立一定的搜索原则，也就是说当用户查找某一关键词时，搜索引擎能根据关键词在数据库中进行查找和搜索，找到相应的位置。</p>
+
+<p>　　当搜索引擎对网络数据建立了数据库之后，接下来就是用户使用阶段了，当用户在搜索栏输入搜索词，单击“搜索”按钮后，搜索引擎即对输入的搜索词进行处理，以提取出相应的关键词，通过关键词在数据库中进行索引和查找，实际的应用中，搜索词的处理是十分快速的。</p>
+
+<p>　　当搜索引擎根据搜索词找到相关的网页之后，接下来就遇到了一个问题，究竟把哪一个网页的链接呈现在前面，哪些链接放在后面呢？这就涉及到搜索引擎工作的最后一步——展示排名。在众多网页中，搜索引擎会根据算法计算得出，一个网站所提供信息的有效性，原创性和信息的认可度等指标，结合网站自身权重等综合算法给出相应的排名显示，同样的，会将一些质量较低的垃圾网站进行过滤，以提高用户检索的有效性。</p>
+
+<p>　　在信息“爆炸”的时代，搜索引擎带给我们的是快速精准的信息查找方式，这大大节省了人们获取知识的时间，提高人们的生产效率，相信随着技术的发展，搜索引擎在未来必定发挥更大的作用。</p>
+
+<h3 id="动态主机配置协议-dhcp">动态主机配置协议 DHCP</h3>
+
+<p>DHCP</p>
+
+<p>连接到互联网的计算机的协议软件需要配置的项目包括：
+（1） IP 地址；
+（2）子网掩码；
+（3）默认路由器的P地址；
+（4）域名服务器的P地址。</p>
+
+<p><strong>DHCP</strong></p>
+
+<p>互联网现在广泛使用的是动态主机配置协议 DHCP（Dynamic Host Configuration Protocol），它提供了一种机制，称为<strong>即插即用连网</strong>（plug-and-play networking）。这种机制允许台计算机加入新的网络和获取 IP 地址而不用手工参与。 DHCP 最新的RFC文档是1997年的 RFC2131 和 RFC2132 ，目前还是互联网草案标准。</p>
+
+<p><strong>作用</strong></p>
+
+<p>DHCP 对运行客户软件和服务器软件的计算机都适用。当运行客户软件的计算机移至个新的网络时，就可使用   DHCP 获取其配置信息而不需要手工干预。 DHCP 给运行服务器软件而位置固定的计算机指派一个永久地址，而当这计算机重新启动时其地址不改变。</p>
+
+<p><strong>工作过程</strong></p>
+
+<p>DHCP 使用客户服务器方式。</p>
+
+<p>需要 IP 地址的主机在启动时就向 DHCP 服务器广播发送发现报文（DHCPDISCOVER）（将目的IP地址置为全1，即255255255.255），这时该主机就成为DHCP客户。</p>
+
+<p>发送广播报文是因为现在还不知道 DHCP 服务器在什么地方，因此要发现（DISCOVER）DHCP 服务器的 IP 地址。</p>
+
+<p>这台主机目前还没有自己的 IP 地址，因此它将 IP 数据报的源 IP 地址设为全0。这样，在本地网络上的所有主机都能够收到这个广播报文，但只有 DHCP 服务器才对此广播报文进行回答。</p>
+
+<p>DHCP 服务器先在其数据库中查找该计算机的配置信息。若找到，则返回找到的信息。若找不到，则从服务器的 IP 地址池（address pool）中取一个地址分配给该计算机。</p>
+
+<p>DHCP 服务器的回答报文叫做提供报文 （DHCPOFFER），表示“提供”了 IP 地址等配置信息。</p>
+
+<p>具体工作过程如下图：</p>
+
+<p><img src="/pic/DHCP协议的工作过程.png" alt="" /></p>
+
+<center>DHCP协议工作过程</center>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1、DHCP 服务器被动打开 UDP 端口67，等待客户端发来的报文。
+
+2、DHCP 客户从 UDP 端口 68 发送 DHCP 发现报文。
+
+3、凡收到 DHCP 发现报文的 DHCP 服务器都发出 DHCP 提供报文，因此 DHCP 客户可能收到多个 DHCP 提供报文。
+
+4、DHCP 客户从几个 DHCP 服务器中选择其中的一个，并向所选择的 DHCP 服务器发送 DHCP 请求报文。
+
+5、被选择的 DHCP 服务器发送确认报文  DHCPACK。从这时起， DHCP 客户就可以使用这个 IP 地址了。
+
+这种状态叫做已绑定状态，因为在 DHCP 客户端的P地址和硬件地址已经完成绑定，并且可以开始使用得到的临时 IP 地址了。
+
+DHCP 客户现在要根据服务器提供的租用期T设置两个计时器 T1 和 T2，它们的超时时间分别是  0.5T 和 0.875T 。当超时时间到了就要请求更新租用期。
+
+6、租用期过了一半（T1 时间到），DHCP 发送请求报文 DHCPREQUEST 要求更新租用期。
+
+7、DHCP 服务器若同意，则发回确认报文 DHCPACK。DHCP 客户得到了新的租用期，重新设置计时器。
+
+8、DHCP 服务器若不同意，则发回否认报文 DHCPNACK。
+
+这时 DHCP 客户必须立即停止使用原来的IP地址，而必须重新申请IP地址（回到步骤2）。
+
+若 DHCP 服务器不响应步骤6的请求报文 DHCPREQUEST，则在租用期过了87.5%时（T2 时间到），DHCP 客户必须重新发送请求报文 DHCPREQUEST（重复步骤6），然后又继续后面的步骤。
+
+9、DHCP 客户可以随时提前终止服务器所提供的租用期，这时只需向 DHCP 服务器发送释放报文 DHCPRELEASE 即可
+</code></pre></div></div>
+
+<p><strong>DHCP 中继代理</strong></p>
+
+<p>每一个网络上都设置一个 DHCP 服务器会使 DHCP 服务器的数量太多。因此现在是使每一个网络至少有一个DHCP中继代理 relay agent）（通常是一台路由器），它配置了 DHCP 服务器的 IP 地址信息。当  DHCP 中继代理收到主机A以广播形式发送的发现报文后，就以单播方式向 DHCP 服务器转发此报文，并等待其回答。收到 DHCP 服务器回答的提供报文后， DHCP 中继代理再把此提供报文发回给主机。</p>
+
+<p><strong>租用期 lease period</strong></p>
+
+<p>DHCP服务器分配给DHCP客户的IP地址是临时的，因此DHCP客户只能在一段有限的时间内使用这个分配到的IP地址。DHCP协议称这段时间为租用期（ease period）</p>
+
+<p>但并没有具体规定租用期应取为多长或至少为多长，这个数值应由DHCP服务器自己决定。DHCP客户也可在自己发送的报文中（例如，发现报文）提出对租用期的要求</p>
+
+<p><strong>常见应用</strong></p>
+
+<p>DHCP 很适合于经常移动位置的计算机。当计算机使用 Windows操作系统时，点击控制面板”的“网络”图标就可以找到某个连接中的“网络”下面的菜单，找到 TCP/IP 协议后点击其“属性”按钮，若选择“自动获得IP地址”和“自动获得DNS服务器地址”，就表示是使用 DHCP 协议</p>
+
+<p><img src="/pic/DHCP-windows.png" alt="" /></p>
+
+<center>windows操作系统设置主机 DHCP 协议</center>
+<h3 id="简单网络管理协议-snmp">简单网络管理协议 SNMP</h3>
+
+<p><strong>网络管理的内容</strong></p>
+
+<p>网络管理包括对硬件、软件和人力的使用、综合与协调，以便对网络资源进行监视、测试、配置、分析、评价和控制，这样就能以合理的价格满足网络的一些需求，如实时运行性能、服务质量等。网络管理常简称为网管。</p>
+
+<p><img src="/pic/网络管理的一般模型.png" alt="" /></p>
+
+<h2 id="其他应用层协议">其他应用层协议</h2>
+
+<h3 id="远程登录-telnet">远程登录 Telnet</h3>
+
+<p>SSH  Secure Shell</p>
+
+<h3 id="微信qq">微信、QQ</h3>
+
+<p><a href="https://blog.csdn.net/qq_40803710/article/details/80888327">QQ使用的通信协议</a></p>
+
+<p><a href="https://wenku.baidu.com/view/ae65006a192e45361066f58e.html">利用Wireshark软件对微信协议的分析</a></p>
+:ET

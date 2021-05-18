@@ -1,4 +1,4 @@
-I"�;<ul id="markdown-toc">
+I"�;<ul id="markdown-toc">
   <li><a href="#工具" id="markdown-toc-工具">工具</a></li>
   <li><a href="#编程语言" id="markdown-toc-编程语言">编程语言</a>    <ul>
       <li><a href="#javascript" id="markdown-toc-javascript">JavaScript</a></li>
@@ -285,7 +285,7 @@
   <li>minimap</li>
   <li>minimap-git-diff</li>
   <li>minimap-codeglance 滑过 minimap 显示代码</li>
-  <li>minimap-find-and-replace 在 minimap 中显示 <code class="highlighter-rouge">ctrl+D</code> 选中的内容</li>
+  <li>minimap-find-and-replace 在 minimap 中显示 <code class="language-plaintext highlighter-rouge">ctrl+D</code> 选中的内容</li>
   <li>open-in-browser</li>
   <li>uglify</li>
   <li>active-power-mode</li>

@@ -1,0 +1,18 @@
+I"D
+<p>传输层：只有主机才有的层次。为应用层提供通信服务，使用网络层的服务</p>
+
+<p>传输层的功能：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1、传输层提供进程和进程之间的逻辑通信。
+
+-----网络层提供主机之间的逻辑通信。
+
+2、复用和分用
+
+3、传输层对收到的报文进行差错检测。（数据部分）
+
+-----网络层的首部校验和只校验了头部，没有校验数据部分
+
+4、传输层的两个协议
+</code></pre></div></div>
+:ET

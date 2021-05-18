@@ -1,4 +1,4 @@
-I",`<ul id="markdown-toc">
+I"�b<ul id="markdown-toc">
   <li><a href="#线程池如何使用" id="markdown-toc-线程池如何使用">线程池如何使用</a>    <ul>
       <li><a href="#架构说明" id="markdown-toc-架构说明">架构说明</a></li>
     </ul>
@@ -13,7 +13,7 @@
   </li>
   <li><a href="#附录" id="markdown-toc-附录">附录</a>    <ul>
       <li><a href="#内置的四种拒绝策略源码" id="markdown-toc-内置的四种拒绝策略源码">内置的四种拒绝策略源码</a></li>
-      <li><a href="#使用-threadpoolexecutor-创建线程池" id="markdown-toc-使用-threadpoolexecutor-创建线程池">使用 <code class="highlighter-rouge">ThreadPooLExecutor</code> 创建线程池</a></li>
+      <li><a href="#使用-threadpoolexecutor-创建线程池" id="markdown-toc-使用-threadpoolexecutor-创建线程池">使用 <code class="language-plaintext highlighter-rouge">ThreadPooLExecutor</code> 创建线程池</a></li>
     </ul>
   </li>
 </ul>
@@ -45,7 +45,7 @@
 Executors(辅助工具类)
 池化技术，最后关闭池子就行</p>
 
-<p>核心类：<code class="highlighter-rouge">ThreadPoolExecutor</code></p>
+<p>核心类：<code class="language-plaintext highlighter-rouge">ThreadPoolExecutor</code></p>
 
 <p>永远传参传接口</p>
 
@@ -65,19 +65,19 @@ Executors(辅助工具类)
 <p>七大参数</p>
 
 <ul>
-  <li>1.<code class="highlighter-rouge">corePoolSize</code>：线程池中的常驻核心线程数</li>
-  <li>2.<code class="highlighter-rouge">maximumPoolSize</code>：线程池能够容纳同时执行的最大线程数，此值必须大于等于1.</li>
-  <li>3.<code class="highlighter-rouge">keepAliveTime</code>：多余的空闲线程的存活时间。当前线程池数量超过<code class="highlighter-rouge">corePoolSize</code>时，当空闲时间达到<code class="highlighter-rouge">keepAliveTime</code>值时，多余空闲线程会被销毁直到只剩下<code class="highlighter-rouge">corePoolSize</code>个线程为止。</li>
-  <li>4.<code class="highlighter-rouge">unit</code>: <code class="highlighter-rouge">keepAliveTime</code>的单位</li>
-  <li>5.<code class="highlighter-rouge">workQueue</code>：任务队列，被提交但尚未被执行的任务。(阻塞队列)</li>
-  <li>6.<code class="highlighter-rouge">threadFactory</code>：表示生成线程池中工作线程的线程工厂，用于创建线程一般用默认的即可。</li>
-  <li>7.<code class="highlighter-rouge">handler</code>：拒绝策略，表示当队列满了并且工作线程大于等于线程池的最大线程数的时候，应该如何做。</li>
+  <li>1.<code class="language-plaintext highlighter-rouge">corePoolSize</code>：线程池中的常驻核心线程数</li>
+  <li>2.<code class="language-plaintext highlighter-rouge">maximumPoolSize</code>：线程池能够容纳同时执行的最大线程数，此值必须大于等于1.</li>
+  <li>3.<code class="language-plaintext highlighter-rouge">keepAliveTime</code>：多余的空闲线程的存活时间。当前线程池数量超过<code class="language-plaintext highlighter-rouge">corePoolSize</code>时，当空闲时间达到<code class="language-plaintext highlighter-rouge">keepAliveTime</code>值时，多余空闲线程会被销毁直到只剩下<code class="language-plaintext highlighter-rouge">corePoolSize</code>个线程为止。</li>
+  <li>4.<code class="language-plaintext highlighter-rouge">unit</code>: <code class="language-plaintext highlighter-rouge">keepAliveTime</code>的单位</li>
+  <li>5.<code class="language-plaintext highlighter-rouge">workQueue</code>：任务队列，被提交但尚未被执行的任务。(阻塞队列)</li>
+  <li>6.<code class="language-plaintext highlighter-rouge">threadFactory</code>：表示生成线程池中工作线程的线程工厂，用于创建线程一般用默认的即可。</li>
+  <li>7.<code class="language-plaintext highlighter-rouge">handler</code>：拒绝策略，表示当队列满了并且工作线程大于等于线程池的最大线程数的时候，应该如何做。</li>
 </ul>
 
 <h1 id="线程池的底层工作原理">线程池的底层工作原理</h1>
 <p><strong>非常重要</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 在创建了线程池后，等待提交过来的任务请求。
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 在创建了线程池后，等待提交过来的任务请求。
 2 当调用execute（）方法添加一个请求任务时，线程池会做如下判断：
 	2.1 如果正在运行的线程数量小于 corePoolSize，那么马上创建马上创建线程运行这个任务。
 	2.2 如果正在运行的线程数量大于或等于corePoolSize，那么将这个任务放入队列。
@@ -98,17 +98,17 @@ Executors(辅助工具类)
 
 <ul>
   <li>
-    <p>N个窗口 : <code class="highlighter-rouge">corePoolSize</code></p>
+    <p>N个窗口 : <code class="language-plaintext highlighter-rouge">corePoolSize</code></p>
   </li>
   <li>
-    <p>总共有K个窗口：<code class="highlighter-rouge">maximumPoolSize</code></p>
+    <p>总共有K个窗口：<code class="language-plaintext highlighter-rouge">maximumPoolSize</code></p>
   </li>
   <li>
-    <p>候客厅   ：<code class="highlighter-rouge">BlockedQueue</code></p>
+    <p>候客厅   ：<code class="language-plaintext highlighter-rouge">BlockedQueue</code></p>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 银行开门，等待顾客上门办理业务
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 银行开门，等待顾客上门办理业务
 2 今天开N个窗口，有N个柜员提供服务。
 	2.1 如果顾客数小于等于N，可以立即为每一个顾客办理业务，不用等待。
     2.2 如果又来了M个顾客，M个顾客在候客厅坐得下，那么顾客就在候客厅等候
@@ -125,13 +125,13 @@ Executors(辅助工具类)
 
 <p>四种拒绝策略：</p>
 <ul>
-  <li><code class="highlighter-rouge">AbortPolicy</code>（默认）：直接抛出<code class="highlighter-rouge">RejectedExecutionException</code>异常阻止系统正常运行。</li>
-  <li><code class="highlighter-rouge">CallerRunsPolicy</code>:“调用者运行“一种调节机制，该策略既不会抛弃任务，也不会抛出异常，而是将某些任务回退到调用者( main线程 )，从而降低新调用者的流量（谁让你找我的，你就找谁）</li>
-  <li><code class="highlighter-rouge">DiscardoldestPolicy</code>：抛弃队列中等待最久的任务，然后把当前任务加入队列中尝试再次提交当前任务。</li>
-  <li><code class="highlighter-rouge">DiscardPolicy</code>：直接丢弃任务，不予任何处理也不抛出异常。如果允许任务丢失，这是最好的一种方案。</li>
+  <li><code class="language-plaintext highlighter-rouge">AbortPolicy</code>（默认）：直接抛出<code class="language-plaintext highlighter-rouge">RejectedExecutionException</code>异常阻止系统正常运行。</li>
+  <li><code class="language-plaintext highlighter-rouge">CallerRunsPolicy</code>:“调用者运行“一种调节机制，该策略既不会抛弃任务，也不会抛出异常，而是将某些任务回退到调用者( main线程 )，从而降低新调用者的流量（谁让你找我的，你就找谁）</li>
+  <li><code class="language-plaintext highlighter-rouge">DiscardoldestPolicy</code>：抛弃队列中等待最久的任务，然后把当前任务加入队列中尝试再次提交当前任务。</li>
+  <li><code class="language-plaintext highlighter-rouge">DiscardPolicy</code>：直接丢弃任务，不予任何处理也不抛出异常。如果允许任务丢失，这是最好的一种方案。</li>
 </ul>
 
-<p>这四种内置拒绝策略均实现了<code class="highlighter-rouge">RejectExecutionHandler</code>接口</p>
+<p>这四种内置拒绝策略均实现了<code class="language-plaintext highlighter-rouge">RejectExecutionHandler</code>接口</p>
 
 <p><strong>面试题目</strong>：你在工作中单一的/固定数的/可变的三种创建线程池的方法，你用那个多？</p>
 
@@ -142,20 +142,20 @@ Executors(辅助工具类)
 <p>【强制】线程资源必须通过线程池提供，不允许在应用中自行显式创建线程。
 说明：使用线程池的好处是减少在创建和销毁线程上所消耗的时间以及系统资源的开销，解决资源不足的问题。如果不使用线程池，有可能造成系统创建大量同类线程而导致消耗完内存或者“过度切换”的问题。</p>
 
-<p>【强制】线程池不允许使用Executors去创建，而是通过<code class="highlighter-rouge">ThreadPooLExecutor</code>的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。</p>
+<p>【强制】线程池不允许使用Executors去创建，而是通过<code class="language-plaintext highlighter-rouge">ThreadPooLExecutor</code>的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。</p>
 
 <p>说明：Executors返回的线程池对象的弊端如下：
-1）<code class="highlighter-rouge">FixedThreadPool</code>和<code class="highlighter-rouge">SingleThreadPool</code>：允许的请求队列长度为<code class="highlighter-rouge">Integer.MAX_VALUE</code>，可能会堆积大量的请求，从而导致<code class="highlighter-rouge">OOM</code>(out of memory)。</p>
+1）<code class="language-plaintext highlighter-rouge">FixedThreadPool</code>和<code class="language-plaintext highlighter-rouge">SingleThreadPool</code>：允许的请求队列长度为<code class="language-plaintext highlighter-rouge">Integer.MAX_VALUE</code>，可能会堆积大量的请求，从而导致<code class="language-plaintext highlighter-rouge">OOM</code>(out of memory)。</p>
 
-<p>2）<code class="highlighter-rouge">CachedThreadPool</code>和<code class="highlighter-rouge">ScheduledThreadPool</code>：允许的创建线程数量为<code class="highlighter-rouge">Integer.MAX_VALUE</code>，可能会创建大量的线程，从而导致<code class="highlighter-rouge">OOM</code>。</p>
+<p>2）<code class="language-plaintext highlighter-rouge">CachedThreadPool</code>和<code class="language-plaintext highlighter-rouge">ScheduledThreadPool</code>：允许的创建线程数量为<code class="language-plaintext highlighter-rouge">Integer.MAX_VALUE</code>，可能会创建大量的线程，从而导致<code class="language-plaintext highlighter-rouge">OOM</code>。</p>
 
 <h1 id="配置线程池">配置线程池</h1>
 
-<p><code class="highlighter-rouge">Runtime.getRuntime().availableProcessors()</code>   查看核心数</p>
+<p><code class="language-plaintext highlighter-rouge">Runtime.getRuntime().availableProcessors()</code>   查看核心数</p>
 
-<p><code class="highlighter-rouge">corePoolSize</code> ：1或者0</p>
+<p><code class="language-plaintext highlighter-rouge">corePoolSize</code> ：1或者0</p>
 
-<p>如何设置 <code class="highlighter-rouge">maximumPoolSize</code>，分情况考虑，要看业务是CPU密集型还是IO密集型</p>
+<p>如何设置 <code class="language-plaintext highlighter-rouge">maximumPoolSize</code>，分情况考虑，要看业务是CPU密集型还是IO密集型</p>
 <h2 id="cpu密集型">CPU密集型</h2>
 
 <p>CPU密集的意思是该任务需要大量的运算，而没有阻塞，CPU一直全速运行。</p>
@@ -265,7 +265,7 @@ Executors(辅助工具类)
     <span class="o">}</span>
 </code></pre></div></div>
 
-<h2 id="使用-threadpoolexecutor-创建线程池">使用 <code class="highlighter-rouge">ThreadPooLExecutor</code> 创建线程池</h2>
+<h2 id="使用-threadpoolexecutor-创建线程池">使用 <code class="language-plaintext highlighter-rouge">ThreadPooLExecutor</code> 创建线程池</h2>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyThreadPoolDemo</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>

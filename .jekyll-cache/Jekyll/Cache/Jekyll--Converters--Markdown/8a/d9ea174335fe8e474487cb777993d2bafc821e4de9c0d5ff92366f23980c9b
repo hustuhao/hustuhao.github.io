@@ -1,4 +1,4 @@
-I"�<ul id="markdown-toc">
+I"e<ul id="markdown-toc">
   <li><a href="#线程池如何使用" id="markdown-toc-线程池如何使用">线程池如何使用</a>    <ul>
       <li><a href="#架构说明" id="markdown-toc-架构说明">架构说明</a></li>
     </ul>
@@ -33,7 +33,7 @@
 Executors(辅助工具类)
 池化技术，最后关闭池子就行</p>
 
-<p>核心类：<code class="highlighter-rouge">ThreadPoolExecutor</code></p>
+<p>核心类：<code class="language-plaintext highlighter-rouge">ThreadPoolExecutor</code></p>
 
 <p>永远传参传接口</p>
 
@@ -53,12 +53,12 @@ Executors(辅助工具类)
 <p>七大参数</p>
 
 <ul>
-  <li>1.<code class="highlighter-rouge">corePoolSize</code>：线程池中的常驻核心线程数</li>
-  <li>2.<code class="highlighter-rouge">maximumPoolSize</code>：线程池能够容纳同时执行的最大线程数，此值必须大于等于1.</li>
-  <li>3.<code class="highlighter-rouge">keepAliveTime</code>：多余的空闲线程的存活时间。当前线程池数量超过<code class="highlighter-rouge">corePoolSize</code>时，当空闲时间达到<code class="highlighter-rouge">keepAliveTime</code>值时，多余空闲线程会被销毁直到只剩下<code class="highlighter-rouge">corePoolSize</code>个线程为止。</li>
-  <li>4.<code class="highlighter-rouge">unit</code>: <code class="highlighter-rouge">keepAliveTime</code>的单位</li>
-  <li>5.<code class="highlighter-rouge">workQueue</code>：任务队列，被提交但尚未被执行的任务。(阻塞队列)</li>
-  <li>6.<code class="highlighter-rouge">threadFactory</code>：表示生成线程池中工作线程的线程工厂，用于创建线程一般用默认的即可。</li>
-  <li>7.<code class="highlighter-rouge">handler</code>：拒绝策略，表示当队列满了并且工作线程大于等于线程池的最大线程数的时候，应该如何做。</li>
+  <li>1.<code class="language-plaintext highlighter-rouge">corePoolSize</code>：线程池中的常驻核心线程数</li>
+  <li>2.<code class="language-plaintext highlighter-rouge">maximumPoolSize</code>：线程池能够容纳同时执行的最大线程数，此值必须大于等于1.</li>
+  <li>3.<code class="language-plaintext highlighter-rouge">keepAliveTime</code>：多余的空闲线程的存活时间。当前线程池数量超过<code class="language-plaintext highlighter-rouge">corePoolSize</code>时，当空闲时间达到<code class="language-plaintext highlighter-rouge">keepAliveTime</code>值时，多余空闲线程会被销毁直到只剩下<code class="language-plaintext highlighter-rouge">corePoolSize</code>个线程为止。</li>
+  <li>4.<code class="language-plaintext highlighter-rouge">unit</code>: <code class="language-plaintext highlighter-rouge">keepAliveTime</code>的单位</li>
+  <li>5.<code class="language-plaintext highlighter-rouge">workQueue</code>：任务队列，被提交但尚未被执行的任务。(阻塞队列)</li>
+  <li>6.<code class="language-plaintext highlighter-rouge">threadFactory</code>：表示生成线程池中工作线程的线程工厂，用于创建线程一般用默认的即可。</li>
+  <li>7.<code class="language-plaintext highlighter-rouge">handler</code>：拒绝策略，表示当队列满了并且工作线程大于等于线程池的最大线程数的时候，应该如何做。</li>
 </ul>
 :ET
